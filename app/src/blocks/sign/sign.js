@@ -25,7 +25,7 @@ $(function() {
 	});
 
 	sign.on('shown.bs.modal', function() { // Фокус при открытии модалки
-		$(this).find('input[type="text"]:first').focus();
+		$(this).find('input:first').focus();
 	});
 
 	sign.on('hidden.bs.modal', function() { // При закрытии модалки возвращается контейнер входа и очищаются инпуты
