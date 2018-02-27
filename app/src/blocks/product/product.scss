@@ -24,6 +24,11 @@
 		padding-bottom: .5em;
 		border-bottom: 1px solid $color-lighter;
 		margin: 0;
+
+		&_sm {
+			display: inline-block;
+			padding: 0 15px;
+		}
 	}
 
 	&__color-wrap {
