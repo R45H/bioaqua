@@ -15,11 +15,17 @@ $(function() {
 		formForgot = sign.find('.js-sign__form_forgot'), // Форма для забытого пароля
 
 		$input = 'input__field', // Класс инпута
-		$inputFillClass = 'input__field_fill' // Класс заполненного инпута
+		$inputFillClass = 'input__field_fill', // Класс заполненного инпута
+
+		$header = $('.top') // Шапка
 	;
 
+	sign.on('show.bs.modal', function() {
+		$header.css('padding-right', '17px');
+	});
+
 	sign.on('shown.bs.modal', function() { // Фокус при открытии модалки
-		$(this).find('input[type="text"]:first').focus();
+		$(this).find('input:first').focus();
 	});
 
 	sign.on('hidden.bs.modal', function() { // При закрытии модалки возвращается контейнер входа и очищаются инпуты
@@ -31,6 +37,8 @@ $(function() {
 			.find('.' + $input)
 			.val('')
 			.removeClass($inputFillClass);
+
+		$header.css('padding-right', '0');
 	});
 
 	// Смена контейнеров при клике на ссылки
